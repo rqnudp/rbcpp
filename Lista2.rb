@@ -7,6 +7,53 @@ end
 end
 class List
 def initialize
+clear
+end
+def empty?
+head.nil?
+end
+def clear
+@head=nil
+@tail=nil
+@n=0
+end
+def get_first
+@head
+end
+def find(obj)
+n=@head
+while !n.nil? && n.value!=obj
+n=next_node
+end
+n
+end
+def get_pos(pos)
+cnt=0
+n=@head
+while !n.nil? && cnt!=pos
+cnt+=1
+n=n.next_node
+end
+n
+end
+def each
+n=@head
+while !n.nil?
+yield n
+n=n.next_node
+end
+end
+def size
+@n
+end
+# def size_rec n
+# if n.nil?
+# 0
+# else
+# 1 + size_rec n.next_node
+#end
+#end
+
 @head=nil
 @tail=nil
 end
